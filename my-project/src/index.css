@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+/* =======================================
+   🔆 CONFIGURAÇÃO DE TEMA PARA TAILWIND 4
+   ======================================= */
+
+@theme {
+  --color-bg-light: oklch(1 0 0);
+  --color-text-light: oklch(0.2 0 0);
+  --color-bg-dark: oklch(0.1 0 0);
+  --color-text-dark: oklch(0.98 0 0);
+  --color-gold: #d4af37;
+}
+
+/* 🌓 Define modo escuro automático pelo atributo data-theme */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-bg: var(--color-bg-light);
+  --color-text: var(--color-text-light);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: var(--color-bg-dark);
+  --color-text: var(--color-text-dark);
+}
+
+/* 🔧 Aplica variáveis no body */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
