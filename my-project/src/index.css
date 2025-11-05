@@ -1,33 +1,77 @@
 @import "tailwindcss";
 
-/* =======================================
-   🔆 CONFIGURAÇÃO DE TEMA PARA TAILWIND 4
-   ======================================= */
+/* ===========================
+   🎨 CONFIGURAÇÃO DE TEMAS
+   =========================== */
 
-@theme {
-  --color-bg-light: oklch(1 0 0);
-  --color-text-light: oklch(0.2 0 0);
-  --color-bg-dark: oklch(0.1 0 0);
-  --color-text-dark: oklch(0.98 0 0);
+/* Tema escuro padrão */
+:root {
+  --color-bg: #0a0a0a;
+  --color-text: #f5f5f5;
   --color-gold: #d4af37;
+  --color-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
-/* 🌓 Define modo escuro automático pelo atributo data-theme */
+/* Tema claro */
 :root[data-theme="light"] {
-  color-scheme: light;
-  --color-bg: var(--color-bg-light);
-  --color-text: var(--color-text-light);
+  --color-bg: #ffffff;
+  --color-text: #1a1a1a;
+  --color-gold: #bfa14a;
+  --color-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 }
 
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --color-bg: var(--color-bg-dark);
-  --color-text: var(--color-text-dark);
-}
-
-/* 🔧 Aplica variáveis no body */
+/* Aplica as cores globais */
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
   transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* aplica as animações com utilitários */
+.animate-fade-in {
+  animation: fade-in 0.8s ease forwards;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease forwards;
+}
+
+.animate-slide-down {
+  animation: slide-down 0.8s ease forwards;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
 }
