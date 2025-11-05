@@ -21,8 +21,16 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-[var(--color-bg)] text-[var(--color-text)] shadow-md transition-colors duration-300">
+    <nav
+      data-theme={theme}
+      className="
+        sticky top-0 z-50 transition-all duration-300
+        bg-[var(--color-bg)] text-[var(--color-text)]
+        shadow-[var(--color-shadow)]
+      "
+    >
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        {/* Logo */}
         <Link
           to="/"
           className="text-2xl font-bold text-[var(--color-gold)] hover:opacity-90 transition-transform duration-300 hover:scale-105"
@@ -30,6 +38,7 @@ export default function Navbar() {
           Enzo Augusto
         </Link>
 
+        {/* Menu Mobile */}
         <button
           className="sm:hidden text-2xl"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -37,6 +46,7 @@ export default function Navbar() {
           {menuOpen ? <FiX /> : <FiMenu />}
         </button>
 
+        {/* Links Desktop */}
         <div className="hidden sm:flex gap-8 items-center font-medium">
           {[
             { to: "/", label: "Home" },
@@ -47,11 +57,14 @@ export default function Navbar() {
             <Link
               key={link.to}
               to={link.to}
-              className={`relative group text-lg transition-all duration-300 ${
-                location.pathname === link.to
-                  ? "text-[var(--color-gold)] font-semibold"
-                  : ""
-              }`}
+              className={`
+                relative group text-lg transition-all duration-300
+                ${
+                  location.pathname === link.to
+                    ? "text-[var(--color-gold)] font-semibold"
+                    : ""
+                }
+              `}
             >
               <span className="relative inline-block transition-transform duration-300 group-hover:scale-110 group-hover:text-[var(--color-gold)]">
                 {link.label}
@@ -60,6 +73,7 @@ export default function Navbar() {
             </Link>
           ))}
 
+          {/* Botão tema */}
           <button
             onClick={toggleTheme}
             className="p-2 rounded-full border border-[var(--color-gold)] hover:bg-[var(--color-gold)]/20 transition"
@@ -74,8 +88,15 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* Menu Mobile */}
       {menuOpen && (
-        <div className="sm:hidden flex flex-col items-center gap-4 py-4 text-lg font-medium bg-[var(--color-bg)] text-[var(--color-text)]">
+        <div
+          data-theme={theme}
+          className="
+            sm:hidden flex flex-col items-center gap-4 py-4 text-lg font-medium
+            bg-[var(--color-bg)] text-[var(--color-text)]
+          "
+        >
           {["Home", "Projetos", "Sobre", "Contato"].map((label, i) => (
             <Link
               key={i}
