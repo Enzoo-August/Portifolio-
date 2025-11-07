@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function ProjectCard({ id, imagem, nome }) {
   return (
     <Link
-      to={`/projects/${id}`} // ⚠️ ESSENCIAL — rota dinâmica
+      to={`/projects/${id}`}
       className="
         group relative rounded-xl overflow-hidden cursor-pointer
         border border-[#D4AF37]

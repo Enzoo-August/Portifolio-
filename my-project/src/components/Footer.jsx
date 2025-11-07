@@ -19,7 +19,6 @@ export default function Footer() {
         </p>
 
         <div className="flex gap-6 mt-2 sm:mt-0">
-          {/* LinkedIn */}
           <a
             href="https://www.linkedin.com/in/enzoo-august"
             target="_blank"
@@ -32,7 +31,6 @@ export default function Footer() {
             <FaLinkedin size={22} />
           </a>
 
-          {/* GitHub */}
           <a
             href="https://github.com/Enzoo-August"
             target="_blank"

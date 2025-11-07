@@ -39,7 +39,6 @@ export default function Navbar() {
       `}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
         <Link
           to="/"
           className={`
@@ -50,7 +49,6 @@ export default function Navbar() {
           Enzo Augusto
         </Link>
 
-        {/* Botão do menu mobile */}
         <button
           className="sm:hidden text-2xl"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -58,7 +56,6 @@ export default function Navbar() {
           {menuOpen ? <FiX /> : <FiMenu />}
         </button>
 
-        {/* Links Desktop */}
         <div className="hidden sm:flex gap-8 items-center font-medium">
           {links.map(({ label, path }) => (
             <div key={path} className="relative">
@@ -97,7 +94,6 @@ export default function Navbar() {
             </div>
           ))}
 
-          {/* Botão Tema */}
           <button
             onClick={toggleTheme}
             className={`
@@ -119,7 +115,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Menu Mobile */}
       {menuOpen && (
         <div
           className={`
@@ -150,7 +145,6 @@ export default function Navbar() {
             </Link>
           ))}
 
-          {/* Botão Tema Mobile */}
           <button
             onClick={() => {
               toggleTheme();

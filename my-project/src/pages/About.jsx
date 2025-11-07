@@ -32,7 +32,6 @@ export default function About() {
       }`}
     >
       <div className="max-w-5xl mx-auto">
-        {/* Cabeçalho */}
         <div className="text-center mb-12">
           <h1
             className={`text-4xl font-extrabold mb-2 ${
@@ -51,7 +50,6 @@ export default function About() {
           </p>
         </div>
 
-        {/* Seção principal */}
         <div
           className={`flex flex-col md:flex-row items-center gap-10 rounded-2xl p-8 shadow-lg transition-all duration-500 ${
             isDark
@@ -59,7 +57,6 @@ export default function About() {
               : "bg-gray-100 shadow-gray-400/20"
           }`}
         >
-          {/* Foto */}
           <div className="relative">
             <img
               src="/images/fotodoenzo.jpg"
@@ -74,7 +71,6 @@ export default function About() {
             <div className="absolute inset-0 rounded-xl border-[3px] border-[#D4AF37]/30 blur-md"></div>
           </div>
 
-          {/* Informações pessoais */}
           <div>
             <h2
               className={`text-2xl font-semibold mb-2 ${
@@ -99,31 +95,24 @@ export default function About() {
             >
               <li className="flex items-center gap-2">
                 <FaMapMarkerAlt
-                  className={
-                    isDark ? "text-[#D4AF37]" : "text-[#B8901F]"
-                  }
-                />{" "}
+                  className={isDark ? "text-[#D4AF37]" : "text-[#B8901F]"}
+                />
                 São Paulo - SP
               </li>
               <li className="flex items-center gap-2">
                 <FaEnvelope
-                  className={
-                    isDark ? "text-[#D4AF37]" : "text-[#B8901F]"
-                  }
-                />{" "}
+                  className={isDark ? "text-[#D4AF37]" : "text-[#B8901F]"}
+                />
                 enzoaugustto@gmail.com
               </li>
               <li className="flex items-center gap-2">
                 <FaPhoneAlt
-                  className={
-                    isDark ? "text-[#D4AF37]" : "text-[#B8901F]"
-                  }
-                />{" "}
+                  className={isDark ? "text-[#D4AF37]" : "text-[#B8901F]"}
+                />
                 (11) 94814-7587
               </li>
             </ul>
 
-            {/* Redes sociais */}
             <div className="flex gap-6 mt-4">
               <a
                 href="https://www.linkedin.com/in/enzoo-august/"
@@ -151,7 +140,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* Idiomas */}
         <div
           className={`mt-14 p-8 rounded-xl shadow-md transition-all duration-500 ${
             isDark
@@ -200,7 +188,6 @@ export default function About() {
           </ul>
         </div>
 
-        {/* Skills */}
         <div
           className={`mt-14 p-8 rounded-xl shadow-md transition-all duration-500 ${
             isDark

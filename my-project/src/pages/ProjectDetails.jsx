@@ -7,7 +7,6 @@ export default function ProjectDetails() {
     document.documentElement.getAttribute("data-theme") || "dark"
   );
 
- 
   useEffect(() => {
     const observer = new MutationObserver(() => {
       setTheme(document.documentElement.getAttribute("data-theme"));
@@ -30,8 +29,8 @@ export default function ProjectDetails() {
       objetivo:
         "Tornar o futebol feminino mais acessível, organizado e visível, centralizando informações e inscrições em uma plataforma moderna.",
       tecnologias: ["React", "JS", "TailwindCSS", "Vite"],
-      video: "/videos/videopassabola.mp4",
-      link: "https://passabola.vercel.app/",
+      video: "https://www.youtube.com/embed/4vOKLid043c",
+      link: "https://passa-bola-fnl.vercel.app/",
     },
     {
       id: 2,
@@ -66,7 +65,7 @@ export default function ProjectDetails() {
           isDark ? "text-gray-400 bg-black" : "text-gray-600 bg-white"
         }`}
       >
-        <p>Projeto não encontrado 😢</p>
+        <p>Projeto não encontrado</p>
       </div>
     );
   }
@@ -78,16 +77,17 @@ export default function ProjectDetails() {
       }`}
     >
       <div className="max-w-4xl mx-auto animate-fade-in">
-        {/* Se tiver vídeo, mostra ele. Caso contrário, mostra imagem */}
         {projeto.video ? (
-          <video
-            className="w-full rounded-xl mb-8 shadow-[0_0_35px_rgba(212,175,55,0.4)] border border-[#D4AF37]"
-            src={projeto.video}
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
+          <div className="relative w-full aspect-video mb-8 rounded-xl overflow-hidden border border-[#D4AF37] shadow-[0_0_35px_rgba(212,175,55,0.4)]">
+            <iframe
+              src={projeto.video}
+              title={projeto.nome}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            ></iframe>
+          </div>
         ) : (
           <img
             src={projeto.imagem}
@@ -96,7 +96,6 @@ export default function ProjectDetails() {
           />
         )}
 
-        {/* Conteúdo */}
         <h1
           className={`text-4xl font-extrabold mb-4 animate-slide-down ${
             isDark ? "text-[#D4AF37]" : "text-[#B8901F]"

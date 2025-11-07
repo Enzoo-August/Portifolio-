@@ -52,7 +52,6 @@ export default function Contact() {
       }`}
     >
       <div className="max-w-4xl mx-auto">
-        {/* Cabeçalho */}
         <div className="text-center mb-12">
           <h1
             className={`text-4xl font-extrabold mb-2 ${
@@ -71,7 +70,6 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* Informações de contato */}
         <div
           className={`flex flex-col md:flex-row items-center justify-between gap-10 p-8 rounded-2xl shadow-lg transition-all duration-500 ${
             isDark
@@ -83,19 +81,19 @@ export default function Contact() {
             <p className="flex items-center gap-3">
               <FaMapMarkerAlt
                 className={isDark ? "text-[#D4AF37]" : "text-[#B8901F]"}
-              />{" "}
+              />
               São Paulo - SP
             </p>
             <p className="flex items-center gap-3">
               <FaEnvelope
                 className={isDark ? "text-[#D4AF37]" : "text-[#B8901F]"}
-              />{" "}
+              />
               enzoaugustto@gmail.com
             </p>
             <p className="flex items-center gap-3">
               <FaPhoneAlt
                 className={isDark ? "text-[#D4AF37]" : "text-[#B8901F]"}
-              />{" "}
+              />
               (11) 94814-7587
             </p>
 
@@ -125,7 +123,6 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Mapa opcional / ícone decorativo */}
           <div className="hidden md:block">
             <FaCommentDots
               className={`text-8xl ${
@@ -135,7 +132,6 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Formulário */}
         <div
           className={`mt-12 rounded-2xl p-8 shadow-md transition-all duration-500 ${
             isDark
@@ -152,7 +148,6 @@ export default function Contact() {
           </h2>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-            {/* Nome */}
             <div className="relative">
               <FaUser
                 className={`absolute left-3 top-1/2 transform -translate-y-1/2 ${
@@ -174,7 +169,6 @@ export default function Contact() {
               />
             </div>
 
-            {/* Email */}
             <div className="relative">
               <FaEnvelope
                 className={`absolute left-3 top-1/2 transform -translate-y-1/2 ${
@@ -196,7 +190,6 @@ export default function Contact() {
               />
             </div>
 
-            {/* Mensagem */}
             <div className="relative">
               <FaCommentDots
                 className={`absolute left-3 top-5 ${
@@ -218,7 +211,6 @@ export default function Contact() {
               />
             </div>
 
-            {/* Botão */}
             <button
               type="submit"
               className={`mt-4 py-3 px-6 rounded-lg font-semibold text-lg transition-transform duration-300 hover:scale-105 ${
