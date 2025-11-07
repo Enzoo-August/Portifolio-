@@ -7,7 +7,7 @@ export default function ProjectDetails() {
     document.documentElement.getAttribute("data-theme") || "dark"
   );
 
-  // Detecta mudanças no modo claro/escuro
+ 
   useEffect(() => {
     const observer = new MutationObserver(() => {
       setTheme(document.documentElement.getAttribute("data-theme"));
