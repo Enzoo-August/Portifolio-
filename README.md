@@ -83,9 +83,6 @@ O site foi desenvolvido seguindo o conceito **Mobile First**, garantindo boa usa
 ┣ 📜 tailwind.config.js
 ┗ 📜 README.md
 
-yaml
-Copiar código
-
 ---
 
 ## 🧾 Requisitos do projeto (atendidos)
@@ -111,35 +108,10 @@ npm run dev
 Abra o navegador e acesse:
 👉 http://localhost:5173/
 ```
-☁️ Deploy automático
-Este projeto pode ser hospedado facilmente no Vercel (recomendado) ou GitHub Pages.
-
-💨 Deploy via Vercel
-Acesse https://vercel.com
-
-Clique em Add New Project
-
-Conecte seu repositório do GitHub
-
-Escolha o projeto e clique em Deploy
-
-Em poucos minutos seu portfólio estará online! 🚀
-
-👨‍💻 Autor
-Enzo Augusto Lima da Silva
-📍 São Paulo – SP
-📧 enzoaugustto@gmail.com
-🔗 LinkedIn
-💻 GitHub
 
 📜 Licença
 Este projeto está sob a licença MIT — sinta-se à vontade para usar e adaptar.
 © 2025 — Desenvolvido com 💛 por Enzo Augusto
 
-yaml
-Copiar código
 
 ---
-
-Quer que eu já edite esse README com o **link exato do seu site (Vercel ou GitHub Pages)** assim que você fizer o deploy?  
-Assim ele fica 100% pronto pra subir.
