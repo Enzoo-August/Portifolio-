@@ -7,7 +7,7 @@ O site foi construído com **React + Tailwind CSS**, e possui modo **claro/escur
 
 ## 🚀 Acesse o projeto
 
-🔗 **Site ao vivo:** [👉 https://seu-link-vercel-ou-github-pages-aqui](#)  
+🔗 **Site ao vivo:** [👉 https://portifolio-uhah.vercel.app/](#)  
 📁 **Repositório GitHub:** [👉 https://github.com/Enzoo-August/Portifolio-](#)  
 
 ---
@@ -112,6 +112,4 @@ Abra o navegador e acesse:
 📜 Licença
 Este projeto está sob a licença MIT — sinta-se à vontade para usar e adaptar.
 © 2025 — Desenvolvido com 💛 por Enzo Augusto
-
-
 ---
