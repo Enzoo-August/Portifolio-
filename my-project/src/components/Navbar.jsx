@@ -20,25 +20,37 @@ export default function Navbar() {
     document.documentElement.setAttribute("data-theme", newTheme);
   };
 
+  const links = [
+    { label: "Home", path: "/" },
+    { label: "Projetos", path: "/projects" },
+    { label: "Sobre", path: "/about" },
+    { label: "Contato", path: "/contact" },
+  ];
+
   return (
     <nav
-      data-theme={theme}
-      className="
-        sticky top-0 z-50 transition-all duration-300
-        bg-[var(--color-bg)] text-[var(--color-text)]
-        shadow-[var(--color-shadow)]
-      "
+      className={`
+        sticky top-0 z-50 transition-all duration-300 backdrop-blur-md
+        ${
+          theme === "dark"
+            ? "bg-black/80 text-white shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+            : "bg-white/80 text-gray-900 shadow-md"
+        }
+      `}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <Link
           to="/"
-          className="text-2xl font-bold text-[var(--color-gold)] hover:opacity-90 transition-transform duration-300 hover:scale-105"
+          className={`
+            text-2xl font-bold transition-transform duration-300 hover:scale-105
+            ${theme === "dark" ? "text-[#d4af37]" : "text-[#bfa14a]"}
+          `}
         >
           Enzo Augusto
         </Link>
 
-        {/* Menu Mobile */}
+        {/* Botão do menu mobile */}
         <button
           className="sm:hidden text-2xl"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -48,41 +60,60 @@ export default function Navbar() {
 
         {/* Links Desktop */}
         <div className="hidden sm:flex gap-8 items-center font-medium">
-          {[
-            { to: "/", label: "Home" },
-            { to: "/projects", label: "Projetos" },
-            { to: "/about", label: "Sobre" },
-            { to: "/contact", label: "Contato" },
-          ].map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className={`
-                relative group text-lg transition-all duration-300
-                ${
-                  location.pathname === link.to
-                    ? "text-[var(--color-gold)] font-semibold"
-                    : ""
-                }
-              `}
-            >
-              <span className="relative inline-block transition-transform duration-300 group-hover:scale-110 group-hover:text-[var(--color-gold)]">
-                {link.label}
-              </span>
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[var(--color-gold)] transition-all duration-300 group-hover:w-full"></span>
-            </Link>
+          {links.map(({ label, path }) => (
+            <div key={path} className="relative">
+              <Link
+                to={path}
+                className={`
+                  text-lg transition-all duration-300 
+                  ${
+                    location.pathname === path
+                      ? theme === "dark"
+                        ? "text-[#d4af37]"
+                        : "text-[#bfa14a]"
+                      : theme === "dark"
+                        ? "text-gray-300 hover:text-[#d4af37]"
+                        : "text-gray-700 hover:text-[#bfa14a]"
+                  }
+                `}
+              >
+                {label}
+              </Link>
+              <span
+                className={`
+                  absolute left-0 -bottom-1 h-[2px] transition-all duration-300
+                  ${
+                    location.pathname === path
+                      ? "w-full"
+                      : "w-0 hover:w-full"
+                  }
+                  ${
+                    theme === "dark"
+                      ? "bg-[#d4af37]"
+                      : "bg-[#bfa14a]"
+                  }
+                `}
+              ></span>
+            </div>
           ))}
 
-          {/* Botão tema */}
+          {/* Botão Tema */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-full border border-[var(--color-gold)] hover:bg-[var(--color-gold)]/20 transition"
+            className={`
+              p-2 rounded-full border transition-all duration-300
+              ${
+                theme === "dark"
+                  ? "border-[#d4af37] hover:bg-[#d4af37]/10"
+                  : "border-[#bfa14a] hover:bg-[#bfa14a]/20"
+              }
+            `}
             aria-label="Alternar tema"
           >
             {theme === "dark" ? (
-              <FiSun className="text-[var(--color-gold)]" />
+              <FiSun className="text-[#d4af37]" />
             ) : (
-              <FiMoon className="text-gray-700" />
+              <FiMoon className="text-[#bfa14a]" />
             )}
           </button>
         </div>
@@ -91,28 +122,44 @@ export default function Navbar() {
       {/* Menu Mobile */}
       {menuOpen && (
         <div
-          data-theme={theme}
-          className="
+          className={`
             sm:hidden flex flex-col items-center gap-4 py-4 text-lg font-medium
-            bg-[var(--color-bg)] text-[var(--color-text)]
-          "
+            transition-all duration-300
+            ${
+              theme === "dark"
+                ? "bg-black text-gray-200 border-t border-[#d4af37]/30"
+                : "bg-white text-gray-800 border-t border-[#bfa14a]/30"
+            }
+          `}
         >
-          {["Home", "Projetos", "Sobre", "Contato"].map((label, i) => (
+          {links.map(({ label, path }) => (
             <Link
-              key={i}
-              to={`/${label.toLowerCase()}`}
+              key={path}
+              to={path}
               onClick={() => setMenuOpen(false)}
-              className="transition-transform duration-200 hover:scale-110 hover:text-[var(--color-gold)]"
+              className={`
+                transition-transform duration-200 hover:scale-110
+                ${
+                  theme === "dark"
+                    ? "hover:text-[#d4af37]"
+                    : "hover:text-[#bfa14a]"
+                }
+              `}
             >
               {label}
             </Link>
           ))}
+
+          {/* Botão Tema Mobile */}
           <button
             onClick={() => {
               toggleTheme();
               setMenuOpen(false);
             }}
-            className="p-2 text-[var(--color-gold)]"
+            className={`
+              p-2 text-2xl transition-all duration-300
+              ${theme === "dark" ? "text-[#d4af37]" : "text-[#bfa14a]"}
+            `}
           >
             {theme === "dark" ? <FiSun /> : <FiMoon />}
           </button>
