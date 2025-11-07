@@ -110,7 +110,7 @@ npm install
 npm run dev
 Abra o navegador e acesse:
 👉 http://localhost:5173/
-
+```
 ☁️ Deploy automático
 Este projeto pode ser hospedado facilmente no Vercel (recomendado) ou GitHub Pages.
 
